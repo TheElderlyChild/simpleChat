@@ -247,27 +247,28 @@ public class EchoServer extends AbstractServer
    */
   public static void main(String[] args) 
   {
-    int port = 0; //Port to listen on
+		 int port = 0; //Port to listen on
 
-    try
-    {
-      port = Integer.parseInt(args[0]); //Get port from command line
-    }
-    catch(Throwable t)
-    {
-      port = DEFAULT_PORT; //Set port to 5555
-    }
-	
-    EchoServer sv = new EchoServer(port, new ServerConsole(port));
-    
-    try 
-    {
-      sv.listen(); //Start listening for connections
-    } 
-    catch (Exception ex) 
-    {
-      System.out.println("ERROR - Could not listen for clients!");
-    }
+		 try
+		 {
+	        port = Integer.parseInt(args[0]); //Get port from command line
+		    }
+		      catch(Throwable t)
+		    {
+		      port = DEFAULT_PORT; //Set port to 5555
+		    }
+	    
+	    ServerConsole chat= new ServerConsole(port);
+	    try 
+	    {
+	      chat.server.listen(); //Start listening for connections
+	    } 
+	    catch (Exception ex) 
+	    {
+	      System.out.println("ERROR - Could not listen for clients!");
+	    }
+	    
+	    chat.accept();  //Wait for console data
   }
 }
 //End of EchoServer class

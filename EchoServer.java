@@ -32,7 +32,7 @@ public class EchoServer extends AbstractServer
    * The interface type variable.  It allows the implementation of 
    * the display method in the server.
    */
-  ServerConsole serverUI; 
+  ChatIF serverUI; 
   
   //Constructors ****************************************************
   
@@ -41,7 +41,7 @@ public class EchoServer extends AbstractServer
    *
    * @param port The port number to connect on.
    */
-  public EchoServer(int port, ServerConsole serverUI) 
+  public EchoServer(int port, ChatIF serverUI) 
   {
     super(port);
     this.serverUI=serverUI;

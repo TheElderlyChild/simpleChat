@@ -145,7 +145,7 @@ public class ClientConsole implements ChatIF
     {
       port = Integer.parseInt(args[2]);
     }
-    catch(ArrayIndexOutOfBoundsException e)
+    catch(Throwable t)
     {
       port = DEFAULT_PORT;
     }
